@@ -1,0 +1,15 @@
+{
+  "name": "yelp-favorites",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Daniel Campbell",
+  "license": "ISC",
+  "dependencies": {
+    "yelp": "^1.0.1"
+  }
+}
