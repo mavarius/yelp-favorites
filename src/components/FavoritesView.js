@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 import FavoritesActions from '../actions/FavoritesActions'
 import FavoritesStore from '../stores/FavoritesStore'
 
+import FavoritesList from './FavoritesList'
+
 export default class FavoritesView extends Component {
   constructor () {
     super()
@@ -15,9 +17,6 @@ export default class FavoritesView extends Component {
 
   componentWillMount () {
     FavoritesStore.startListening(this._onChange)
-  }
-
-  componentDidMount () {
     FavoritesActions.getFavorites()
   }
 
@@ -34,7 +33,7 @@ export default class FavoritesView extends Component {
   render () {
     return (
       <div className="row">
-        <h3>Don't give me any sass, I know you can do this on Yelp already...</h3>
+        <FavoritesList {...this.state} />
       </div>
     )
   }

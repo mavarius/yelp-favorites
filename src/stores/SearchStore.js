@@ -3,14 +3,21 @@ import AppDispatcher from '../AppDispatcher'
 
 let _results = []
 
+let _details = {}
+
 class SearchStore extends EventEmitter {
   constructor () {
     super()
 
     AppDispatcher.register(action => {
       switch (action.type) {
-        case 'RECEIVE_results':
-          _results = action.payload.favorites
+        case 'RECEIVE_SEARCH_RESULTS':
+          _results = action.payload.results
+          this.emit('CHANGE')
+          break
+        case 'RECEIVE_DETAILS':
+          _details = action.payload.details
+          this.emit('CHANGE')
           break
       }
     })
@@ -26,6 +33,10 @@ class SearchStore extends EventEmitter {
 
   getAll () {
     return _results
+  }
+
+  getDetails () {
+    return _details
   }
 }
 

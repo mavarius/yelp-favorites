@@ -2,8 +2,12 @@ import API from '../API'
 // import AppDispatcher from '../AppDispatcher'
 
 const SearchActions = {
-  getSearchs () {
-    API.getSearchs()
+  getSearch (query) {
+    API.getSearch(query)
+  },
+
+  getDetails (id) {
+    API.getDetails(id)
   }
 }
 

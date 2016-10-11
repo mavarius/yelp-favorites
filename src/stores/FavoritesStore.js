@@ -11,6 +11,7 @@ class FavoritesStore extends EventEmitter {
       switch (action.type) {
         case 'RECEIVE_FAVORITES':
           _favorites = action.payload.favorites
+          this.emit('CHANGE')
           break
       }
     })
